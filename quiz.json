@@ -1,0 +1,94 @@
+[{
+	"id": 1,
+	"question":"What is the penalty for a direct red card in the World Cup?",
+	"Variants": ["One game suspension that can be extended by the FIFA’s disciplinary committee", "FIFA’s disciplinary committee check the videos of the player’s foul and decides the longer of the suspension",
+		"The player will be automatically banned for two games"],
+	"Answer":"One game suspension that can be extended by the FIFA’s disciplinary committee",
+	"description": "Players sent off during a World Cup match through a direct red card are automatically suspended for their team’s next game. FIFA’s disciplinary committee has the power to extend the suspension according to their discretion.",
+	"Stats":[0,0,0]
+},
+{
+	"id":2 ,
+	"question":"What is the minimum number of players per team that FIFA allows during a football game?",
+	"Variants":["There is no minimum number of players required by the official football rules", "6 players", "7 players", "8 players"] 
+ ,
+	"Answer":"7 players",
+	"description": "According to Law 3 of FIFA’s Laws of the Game, the minimum number of players in a football match is seven, but it allows the football federation of each country to set its own minimum number of players."
+,
+	"Stats":[0,0,0]
+},
+{
+	"id": 3,
+	"question":"What is the distance between the penalty mark and the goal?",
+	"Variants":["9 yards (8.33 meters)", "10 yards (9.14 meters)", "11 yards (10.06 meters)", "12 yards  (10.97 meters)"]  ,
+	"Answer":"12 yards  (10.97 meters)",
+	"description": "Law 1 of FIFA football rules, “Field of Play”, states that the distance between the goal line and the penalty spot has to be 12 yards, or about 11 meters."
+,
+	"Stats":[0,0,0]
+},
+{
+	"id": 4,
+	"question":"What happens if the goalkeeper handles the ball directly after the throw-in of a teammate?",
+	"Variants": ["The goalkeeper receives a yellow card and the throw-in is given to the opposite team", "The game continues, there is no violation", 
+"An indirect free-kick is given to the opponents from the point where he handles the ball"],
+	"Answer":"An indirect free-kick is given to the opponents from the point where he handles the ball",
+	"description": "An indirect free kick is awarded to the opposing team if a goalkeeper, inside his own penalty area, handles the ball directly after a throw-in by a teammate. However, the goalkeeper may play the ball using other parts of his body without being penalized. Law 15 governs the throw-in rules in football."
+,
+	"Stats":[0,0,0]
+},
+{
+	"id":5 ,
+	"question":"Can a goal be scored directly from a corner kick?",
+	"Variants": ["Yes, but only if the ball hits the ground before it goes inside the goal",  "No,  Law 17 specifies that an outfield player has to touch the ball first for the goal to be valid",
+"Yes, a corner kick has the same rule for a direct free-kick"],
+	"Answer":"Yes, a corner kick has the same rule for a direct free-kick",
+	"description": "Law 17 allows a player to score a goal from a corner kick, even if the ball is not touched by any other player. This method of scoring in football is known in Latin America as “Olympic goal”."
+,
+	"Stats":[0,0,0]
+},
+{
+	"id":6,
+	"question":"What are the dimensions of a soccer goal?",
+	"Variants":["8 yards (7.32 meters) wide and 8 feet tall (2.44 meter)", "8 yards wide and 8 feet tall but the FIFA rules allow a 1% margin of error"],
+	"Answer":"8 yards (7.32 meters) wide and 8 feet tall (2.44 meter)",
+	"description": "The football goal dimensions are defined by Law 1, which states that the distance between the posts is 8 yards while the lower edge of the crossbar should be 8 feet above the ground. The posts and the crossbar should have the same width and thickness. The law does not state anything about a margin of error in goal measurement.  "
+,
+	"Stats":[0,0,0]
+},
+{
+	"id": 7,
+	"question":"Which law is not one of the 17 individual FIFA laws of the game?",
+	"Variants": ["The Goal Kick", "Yellow and red card", "The Start and Restart of Play", "The Method of Scoring"],
+	"Answer":"Yellow and red card",
+	"description": "The “Yellow and red cards” are not one of the 17 laws of the game. They fall under the category of “Fouls and misconduct”, which is Law number 12."
+,
+	"Stats":[0,0,0]
+},
+{
+	"id": 8,
+	"question":"A defending player kicks the soccer ball, it hits the referee and goes inside the goal. What is the appropriate restart?",
+	"Variants": ["Drop ball where the ball hit the referee", "Goal kick", "Kick-off", "Indirect Free kick for the attacking team where the referee was"],
+	"Answer":"Kick-off",
+	"description": "Like the players, the goalposts, and the corner flag, the referee is a part of the game. If the ball hits the referee and crosses the goal line, it is counted as a goal and therefore, the game should be restarted with a kick off."
+,
+	"Stats":[0,0,0]
+},
+{
+	"id": 9,
+	"question":"According to the FIFA rules, what are the maximum dimensions of a football field for a World Cup match?",
+	"Variants": ["110 yards (101 meters) in length and 80 yards (73 meters) in width", "130 yards  in length and 90 yards (82 meters) in width",
+"130 yards (119 meters) in length and 100 yards (91 meters) in width", "120 yards (110 meters) in length and 80 yards (73 meters) in width"],
+	"Answer":"120 yards (110 meters) length and 80 yards (73 meters) width",
+	"description": "Law 1, “Field of Play”, states that the soccer field dimension for international matches has to be from 110 to 120 yards long and from 70 to 80 yards wide."
+,
+	"Stats":[0,0,0]
+},
+{
+	"id": 10,
+	"question":"What is the penalty for a player who spit on an opponent?",
+	"Variants": ["Red card if the spit hits the player, yellow card if not", "An automatic red card", "The referee has the discretion of the sanction", "Yellow card because it’s not a serious foul play and he didn’t deny an obvious goal scoring opportunity"],
+	"Answer":"An automatic red card",
+	"description": "A player is automatically sent off by a red card if he spits at an opponent or any other person. Law 12 governs the rules and punishments for misconducts in football.",
+	"Stats":[0,0,0]
+}
+]
