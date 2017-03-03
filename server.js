@@ -1,5 +1,6 @@
 var express = require('express');
 var MongoClient = require('mongodb').MongoClient;
+var data = require('./quiz.json');
 var app = express();
 
 var url = require('./secret.js').url;
@@ -37,16 +38,21 @@ app.get('',function(req,res){
 	res.send('Hello Api');
 })
 
+importToDB = function(arr,db){
+	for(a in arr){
+		db.collection('questions').insert(arr[a],function(err,result){
+		})
+	} 
+}
+
 MongoClient.connect(url, function (err, db) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
   } else {
-    console.log('Connection established to');
-    // do some work here with the database.
+    console.log('Connection established');
 	app.listen(3012, function(){
 		console.log("Api started");
 	})
-    //Close connection
     db.close();
   }
 });
