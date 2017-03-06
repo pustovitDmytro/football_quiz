@@ -50,9 +50,10 @@ db.connect(url, function (err) {
   }else {
     console.log('Connection established');
 	
-	app.listen(2000, function(){
+	app.listen(3020, function(){
 		console.log("Api started");
-		
+		console.log(db.getQuestion(5));
+		//db.takeIntoAccount(5,2);
 	});
   }
 });

@@ -6,27 +6,25 @@ var state = {
 	db: null
 };
 
-exports.test = function(){
-	console.log("test");
-	insertDocuments(state.db,function(err){
-		if(err){
-			console.log(err);
-		}
-	})
-
-}
-
-var insertDocuments = function(db, callback) {
-  var collection = db.collection('documents');
-  collection.insertMany([
-    {a : 1}, {a : 2}, {a : 3}
-  ], function(err, result) {
+exports.takeIntoAccount = function(num,ans){
+	assert(state.db,"DB is not connected");
+	var current;
+	var collection = state.db.collection('questions');
+	collection.find({'id': num}).toArray(function(err, docs) {
+		console.log("err");
+    	assert.equal(err, null);
+    	console.log("docs");
+    	current = docs.Stats;   
+	});
+	console.log(current);
+	current[ans]+=1;    
+	collection.updateOne({ 'id' : num }
+    , { $inc: {Stats: current} }, function(err, result) {
     assert.equal(err, null);
-    assert.equal(3, result.result.n);
-    assert.equal(3, result.ops.length);
-    console.log("Inserted 3 documents into the collection");
-    callback(result);
-  });
+    assert.equal(1, result.result.n);
+    console.log("Succesfully apdated");
+    return result;
+  });  
 }
 
 
@@ -34,18 +32,19 @@ exports.getQuestion = function(num){
 	assert(state.db,"DB is not connected"); 
 	console.log("getting question ",num);
 	var collection = state.db.collection('questions');
-	collection.find({'id': num}).toArray(function(err, docs) {
-    assert.equal(err, null);
-    console.log(docs);
-    return docs;
-  });      
-
+	var question;
+	collection.find({'id': num}).toArray(function(err, docs){
+    	assert.equal(err, null);
+    	question = docs;
+    	console.log(question);
+  });
+return question;
 }
 
-
-var importData = function(db, arr){
+exports.importData = function(arr){
+	assert(state.db,"DB is not connected"); 
 	for(a in arr){
-		db.collection('questions2').insert(arr[a],function(err,result){
+		state.db.collection('questions').insert(arr[a],function(err,result){
 			if(err){
 				return console.log(err);
 			}
@@ -66,8 +65,4 @@ exports.connect = function(url,done){
  		done();
  	});
 
-}
-
-exports.get = function(){
-	return state.db; 
 }
