@@ -52,7 +52,7 @@ db.connect(url, function (err) {
 	
 	app.listen(2000, function(){
 		console.log("Api started");
-		db.test();
+		
 	});
   }
 });

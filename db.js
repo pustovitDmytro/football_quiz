@@ -17,10 +17,7 @@ exports.test = function(){
 }
 
 var insertDocuments = function(db, callback) {
-  // Get the documents collection
   var collection = db.collection('documents');
-  // Insert some documents
-  console.log("collection")
   collection.insertMany([
     {a : 1}, {a : 2}, {a : 3}
   ], function(err, result) {
@@ -32,9 +29,23 @@ var insertDocuments = function(db, callback) {
   });
 }
 
-exports.importData = function(arr){
+
+exports.getQuestion = function(num){
+	assert(state.db,"DB is not connected"); 
+	console.log("getting question ",num);
+	var collection = state.db.collection('questions');
+	collection.find({'id': num}).toArray(function(err, docs) {
+    assert.equal(err, null);
+    console.log(docs);
+    return docs;
+  });      
+
+}
+
+
+var importData = function(db, arr){
 	for(a in arr){
-		state.db.collection('questions2').insert(arr[a],function(err,result){
+		db.collection('questions2').insert(arr[a],function(err,result){
 			if(err){
 				return console.log(err);
 			}
