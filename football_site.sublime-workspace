@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"inser",
+				"insertDocuments"
+			],
+			[
+				"im",
+				"importData\t(db.js)"
+			],
+			[
+				"sen",
+				"sendStatus"
+			],
+			[
+				"err",
+				"err"
+			],
+			[
+				"bod",
+				"bodyParser"
+			],
+			[
 				"se",
 				"secret"
 			],
@@ -252,19 +272,19 @@
 	"buffers":
 	[
 		{
-			"file": "secret.js",
+			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 66,
+				"buffer_size": 1200,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "server.js",
+			"file": "db.js",
 			"settings":
 			{
-				"buffer_size": 957,
+				"buffer_size": 1180,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -347,12 +367,15 @@
 	"expanded_folders":
 	[
 		"/C/Users/pusti/OneDrive/code/js/football",
-		"/C/Users/pusti/OneDrive/code/js/football/node_modules",
-		"/C/Users/pusti/OneDrive/code/js/football/node_modules/mongodb",
-		"/C/Users/pusti/OneDrive/code/js/football/node_modules/mongodb/lib"
+		"/C/Users/pusti/OneDrive/code/js/football/node_modules"
 	],
 	"file_history":
 	[
+		"/C/Users/pusti/OneDrive/code/js/football/secret.js",
+		"/C/Users/pusti/AppData/Roaming/Sublime Text 3/Packages/User/node.sublime-build",
+		"/C/Users/pusti/AppData/Roaming/Sublime Text 3/Packages/User/anaconda.sublime-build",
+		"/C/Users/pusti/Desktop/lab3/sourse/MyForm.h",
+		"/C/Users/pusti/OneDrive/Kpi progects/sisan/lab5/linearyzacia.cpp",
 		"/C/Users/pusti/OneDrive/code/js/football/package.json",
 		"/C/Users/pusti/OneDrive/code/js/football/quiz.json",
 		"/C/Users/pusti/OneDrive/code/C#/windows_10/all.json",
@@ -361,7 +384,6 @@
 		"/C/Users/pusti/OneDrive/Kpi progects/mss/lab1.py",
 		"/C/Users/pusti/OneDrive/Kpi progects/старі_протоколи/7_sem/1_ачр.py",
 		"/C/Users/pusti/OneDrive/Kpi progects/mss/Fergulst(4,0.8,5).png",
-		"/C/Users/pusti/AppData/Roaming/Sublime Text 3/Packages/User/anaconda.sublime-build",
 		"/C/Users/pusti/OneDrive/Kpi progects/mss/labs.sublime-project",
 		"/C/Users/pusti/OneDrive/Kpi progects/диплом/прога/hmm.py",
 		"/C/Users/pusti/Desktop/MyForm.h",
@@ -476,11 +498,7 @@
 		"/C/Users/pusti/OneDrive/code/python/scrapping/testing_csv/1.csv",
 		"/C/Users/pusti/OneDrive/code/python/scrapping/testing_csv/1.stat",
 		"/C/Users/pusti/OneDrive/code/python/scrapping/testing_csv/2.stat",
-		"/C/Users/pusti/OneDrive/code/python/scrapping/testing_csv/2.py",
-		"/C/Users/pusti/OneDrive/code/python/scrapping/testing_csv/1/total.stat",
-		"/C/Users/pusti/OneDrive/code/python/scrapping/testing_csv/1.py",
-		"/C/Users/pusti/OneDrive/code/python/scrapping/selenium_beta/Aug/total.stat",
-		"/C/Users/pusti/OneDrive/code/python/scrapping/selenium_beta/Aug/6_Aug_results.csv"
+		"/C/Users/pusti/OneDrive/code/python/scrapping/testing_csv/2.py"
 	],
 	"find":
 	{
@@ -541,132 +559,29 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "secret.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 66,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5,
-								5
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/3024 Night.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "server.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 957,
+						"buffer_size": 1200,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								529,
-								529
+								908,
+								548
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"bracket_highlighter.busy": false,
 							"bracket_highlighter.locations":
 							{
@@ -674,8 +589,8 @@
 								{
 									"1":
 									[
-										551,
-										552
+										907,
+										908
 									]
 								},
 								"icon":
@@ -690,8 +605,8 @@
 								{
 									"1":
 									[
-										528,
-										529
+										808,
+										809
 									]
 								},
 								"unmatched":
@@ -700,11 +615,36 @@
 							},
 							"bracket_highlighter.regions":
 							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -715,11 +655,11 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -729,41 +669,135 @@
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content",
+								"bh_tag_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/3024 Night.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "db.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								174,
+								174
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										236,
+										237
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										173,
+										174
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/3024 Night.tmTheme",
+							"open_with_edit": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -802,13 +836,13 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 25.0
+		"height": 133.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "Packages/User/anaconda.sublime-build",
+	"pinned_build_system": "Packages/User/node.sublime-build",
 	"project": "football_site.sublime-project",
 	"replace":
 	{

@@ -1,58 +1,58 @@
 var express = require('express');
-var MongoClient = require('mongodb').MongoClient;
-var data = require('./quiz.json');
 var app = express();
+var bodyParser = require('body-parser');
 
+var db = require('./db.js')
 var url = require('./secret.js').url;
+var data = require('./quiz.json');
 
-questions = [
-{	id: 0,
-	question: "1",
-	Var: ["A","B","C"],
-	Ans:[0,0,0]
-},
-{	id: 1,
-	question: "2",
-	Var: ["A","B","C","D"],
-	Ans:[0,0,0,0]
-},
-{	id: 2,
-	question: "3",
-	Var: ["A","B"],
-	Ans:[0,0]
-},
-];
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 app.get("/quiz/:id", function(req,res){
-	var quest = questions.find(function(q){
-		return q.id=== Number(req.params.id)
-	});
-	res.send(quest)
+	console.log(req.params);
 })
 
 app.get("/quiz",function(req,res){
-	res.send(questions)
+	db.get().collection('questions').find().toArray(function(err,arr){
+		if(err){
+				console.log(err);
+				return res.sendStatus(500);
+			}
+			res.send(arr);
+	});
 })
 
 app.get('',function(req,res){
-	res.send('Hello Api');
+	res.send('This Api was created by pustovitDmytro');
 })
 
-importToDB = function(arr,db){
-	for(a in arr){
-		db.collection('questions').insert(arr[a],function(err,result){
-		})
-	} 
-}
+app.post('/quiz/answer',function(req,res){
+	console.log(req.body);
+	db.get().collection("questions").update(
+		{id : req.body.id},
+		{Stats: "[1,0,0]"},
+		function(err,res){
+			if(err){
+				console.log(err);
+				return res.sendStatus(500);
+			}
+			res.sendStatus(200);
+		}
+		);
+	res.sendStatus(200);
+})
 
-MongoClient.connect(url, function (err, db) {
+db.connect(url, function (err) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
-  } else {
+  }else {
     console.log('Connection established');
-	app.listen(3012, function(){
+	
+	app.listen(2000, function(){
 		console.log("Api started");
-	})
-    db.close();
+		db.test();
+	});
   }
 });
