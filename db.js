@@ -1,46 +1,45 @@
-
 var MongoClient = require('mongodb').MongoClient,
 assert = require('assert');
-
 var state = {
 	db: null
 };
-
-exports.takeIntoAccount = function(num,ans){
-	assert(state.db,"DB is not connected");
-	var current;
-	var collection = state.db.collection('questions');
-	collection.find({'id': num}).toArray(function(err, docs) {
-		console.log("err");
-    	assert.equal(err, null);
-    	console.log("docs");
-    	current = docs.Stats;   
-	});
-	console.log(current);
-	current[ans]+=1;    
+exports.takeIntoAccount = function(num,ans,res){
+	var collection = this.getCollection();
+	var obj = JSON.parse('{ "Stats.'+ans+'":1 }');
 	collection.updateOne({ 'id' : num }
-    , { $inc: {Stats: current} }, function(err, result) {
-    assert.equal(err, null);
-    assert.equal(1, result.result.n);
-    console.log("Succesfully apdated");
-    return result;
+    , { $inc: obj }, function(err, result) {
+   		if(err){
+				console.log(err);
+				return res.sendStatus(500);
+			}
+			res.sendStatus(200)
+    	console.log("Succesfully updated");
   });  
 }
-
-
-exports.getQuestion = function(num){
-	assert(state.db,"DB is not connected"); 
-	console.log("getting question ",num);
-	var collection = state.db.collection('questions');
-	var question;
-	collection.find({'id': num}).toArray(function(err, docs){
-    	assert.equal(err, null);
-    	question = docs;
-    	console.log(question);
-  });
-return question;
+exports.getCollection = function(){
+	return state.db.collection('questions');
 }
+exports.getQuestion = function(num,res){
+	collection = this.getCollection();
+	collection.find({'id': num}).toArray(function(err, docs){
+    	if(err){
+				console.log(err);
+				return res.sendStatus(500);
+			}
+			res.send(docs);
+});
 
+}
+exports.getAll = function(res){
+	collection = this.getCollection();
+	collection.find().toArray(function(err,arr){
+		if(err){
+				console.log(err);
+				return res.sendStatus(500);
+			}
+			res.send(arr);
+	});
+}
 exports.importData = function(arr){
 	assert(state.db,"DB is not connected"); 
 	for(a in arr){
@@ -52,7 +51,6 @@ exports.importData = function(arr){
 		})
 	} 
 }
-
 exports.connect = function(url,done){
  	if(state.db){
  		return done();
@@ -64,5 +62,4 @@ exports.connect = function(url,done){
  		state.db = db;
  		done();
  	});
-
 }

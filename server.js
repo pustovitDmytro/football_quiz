@@ -4,24 +4,17 @@ var bodyParser = require('body-parser');
 
 var db = require('./db.js')
 var url = require('./secret.js').url;
-var data = require('./quiz.json');
+//var data = require('./quiz.json');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
 app.get("/quiz/:id", function(req,res){
-	console.log(req.params);
+	db.getQuestion(Number(req.params.id),res)
 })
 
 app.get("/quiz",function(req,res){
-	db.get().collection('questions').find().toArray(function(err,arr){
-		if(err){
-				console.log(err);
-				return res.sendStatus(500);
-			}
-			res.send(arr);
-	});
+	db.getAll(res);
 })
 
 app.get('',function(req,res){
@@ -29,31 +22,16 @@ app.get('',function(req,res){
 })
 
 app.post('/quiz/answer',function(req,res){
-	console.log(req.body);
-	db.get().collection("questions").update(
-		{id : req.body.id},
-		{Stats: "[1,0,0]"},
-		function(err,res){
-			if(err){
-				console.log(err);
-				return res.sendStatus(500);
-			}
-			res.sendStatus(200);
-		}
-		);
-	res.sendStatus(200);
+	db.takeIntoAccount(Number(req.body.id), Number(req.body.answer),res);
 })
 
 db.connect(url, function (err) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
-  }else {
-    console.log('Connection established');
-	
+  }else{
+    console.log('Connection established');	
 	app.listen(3020, function(){
 		console.log("Api started");
-		console.log(db.getQuestion(5));
-		//db.takeIntoAccount(5,2);
 	});
   }
-});
+})
