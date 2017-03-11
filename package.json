@@ -9,6 +9,9 @@
   "engines": {
     "node": "4.6.1"
   },
+  "scripts": {
+    "start": "node server.js"
+  },
   "author": "Dmytro Pustovit",
   "license": "ISC",
   "dependencies": {

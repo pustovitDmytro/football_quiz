@@ -6,13 +6,13 @@ var state = {
 exports.takeIntoAccount = function(num,ans,res){
 	var collection = this.getCollection();
 	var obj = JSON.parse('{ "Stats.'+ans+'":1 }');
-	collection.updateOne({ 'id' : num }
+	collection.updateOne({ 'id' : num}
     , { $inc: obj }, function(err, result) {
    		if(err){
 				console.log(err);
 				return res.sendStatus(500);
 			}
-			res.sendStatus(200)
+		res.sendStatus(200)
     	console.log("Succesfully updated");
   });  
 }

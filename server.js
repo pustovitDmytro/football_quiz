@@ -9,6 +9,8 @@ var url = require('./secret.js').url;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.set('port', (process.env.PORT || 5000));
+
 app.get("/quiz/:id", function(req,res){
 	db.getQuestion(Number(req.params.id),res)
 })
@@ -30,8 +32,9 @@ db.connect(url, function (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
   }else{
     console.log('Connection established');	
-	app.listen(3020, function(){
-		console.log("Api started");
+	app.listen(app.get('port'), function() {
+  		console.log('Node app is running on port', app.get('port'));
 	});
+
   }
 })
